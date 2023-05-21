@@ -9,8 +9,29 @@
       <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/06_Collections.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06_Collections.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../07_ClassesAndObjects/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../07_ClassesAndObjects/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../07_ClassesAndObjects/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../07_ClassesAndObjects/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../07_ClassesAndObjects/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../07_ClassesAndObjects/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../07_ClassesAndObjects/07_ClassesAndObjects.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../kotlin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../05_ConditionalExpressions_Loops/untitled/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../05_ConditionalExpressions_Loops/untitled/src/main/kotlin/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05_ConditionalExpressions_Loops/HomeWork/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05_ConditionalExpressions_Loops/HomeWork/src/main/kotlin/main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05_ConditionalExpressions_Loops/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../05_ConditionalExpressions_Loops/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05_ConditionalExpressions_Loops/untitled/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05_ConditionalExpressions_Loops/untitled/src/main/kotlin/main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../07_ClassesAndObjects/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../07_ClassesAndObjects/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +51,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-20",
     "last_opened_file_path": "/Users/alpacino/Projects/kotlin/06_Collections"
