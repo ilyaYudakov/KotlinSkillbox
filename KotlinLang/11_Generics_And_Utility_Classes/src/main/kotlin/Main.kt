@@ -1,23 +1,18 @@
-import main.kotlin.Battle
-import main.kotlin.Team
 import kotlin.random.Random
 
 fun main() {
-    var teamFirst = Team()
-    var teamSecond = Team()
-    teamFirst.filling(5)
-    teamSecond.filling(7)
-    Battle(teamFirst = teamFirst, teamSecond = teamSecond).iteration()
+    val firstTeam = Team().createTeam(7)
+    val secondTeam = Team().createTeam(7)
+
+    val battle = Battle(firstTeam, secondTeam)
+    while (!battle.isGameOver) {
+        battle.getCurrentCondition()
+        battle.iterate()
+    }
+    battle.getCurrentCondition()
 }
 
-fun Int.chance(): Boolean {
-    return if (this in 0..100) {
-        when (Random.nextInt(101)) {
-            in 1..this -> true
-            else -> false
-        }
-    } else {
-        println("Non-compliance with the limit")
-        false
-    }
+fun Int.isChance(): Boolean {
+    return Random.nextInt(100) <= this
 }
+

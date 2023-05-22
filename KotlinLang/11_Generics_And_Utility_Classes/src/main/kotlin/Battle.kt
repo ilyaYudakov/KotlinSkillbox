@@ -1,66 +1,20 @@
-package main.kotlin
+class Battle(private var firstTeam: List<AbstractWarrior>, private var secondTeam: List<AbstractWarrior>) {
+    val isGameOver: Boolean
+        get() = firstTeam.isEmpty() || secondTeam.isEmpty()
 
-import kotlin.random.Random
-import kotlin.random.nextInt
+    fun getCurrentCondition() {
+        if (firstTeam.isNotEmpty() && secondTeam.isNotEmpty()) println(BattleState.Progress.condition)
+        if (firstTeam.isEmpty() && secondTeam.isEmpty()) println(BattleState.Draw.condition)
+        if (firstTeam.isNotEmpty() && secondTeam.isEmpty()) println(BattleState.FirstTeamWin.condition)
+        if (firstTeam.isEmpty() && secondTeam.isNotEmpty()) println(BattleState.SecondTeamWin.condition)
+    }
+    fun iterate() {
+        firstTeam.forEach { it.attack(secondTeam.random()) }
+        secondTeam = secondTeam.filter { !it.isKilled }
+        println("Warriors of second Team: ${secondTeam.size}")
+        secondTeam.forEach { it.attack(firstTeam.random()) }
+        firstTeam = firstTeam.filter { !it.isKilled }
+        println("Warriors of first Team: ${firstTeam.size}")
 
-class Battle(var teamFirst: Team, var teamSecond: Team) {
-    private var battleIsOver = false
-    private fun nameOfTeam(team: Team): String {
-        return when (team) {
-            teamFirst -> "First team"
-            else -> "Second team"
-        }
-    }
-    private fun getBattleState(): BattleState {
-        return if (teamFirst.team.size == 0 && teamSecond.team.size == 0) {
-            BattleState.Draw
-        } else if (teamFirst.team.size > 0 && teamSecond.team.size == 0) {
-            BattleState.FirstWon
-        } else if (teamFirst.team.size == 0 && teamSecond.team.size > 0) {
-            BattleState.SecondWon
-        } else {
-            BattleState.Progress.counting(teamFirst, teamSecond)
-            BattleState.Progress
-        }
-    }
-    private fun iterationForTeam(team1: Team, team2: Team) {
-        println("${nameOfTeam(team1)}'s move")
-        for (i in team1.team.indices.reversed()) {
-            var rand = Random.nextInt(0..team2.team.lastIndex)
-            println("${team1.team[i]} is attacking ${team2.team[rand]}")
-            team1.team[i].attack((team2.team[rand]))
-            println("His health is ${team2.team[rand].health}")
-            if (team2.team[rand].isKilled) {
-                println("${team2.team[rand]} is died")
-                team2.team.remove(team2.team[rand])
-            }
-            if (getBattleState() != BattleState.Progress) {
-                getBattleState()
-                battleIsOver = true
-                break
-            }
-            println()
-        }
-    }
-    fun iteration() {
-        println(nameOfTeam(teamFirst))
-        teamFirst.team.forEach { println("$it from First team has weapon ${it.weapon.name}") }
-        println()
-        println(nameOfTeam(teamSecond))
-        teamSecond.team.forEach { println("$it from Second team has weapon ${it.weapon.name}") }
-        println()
-        println("Battle is starting")
-        getBattleState()
-        while (!battleIsOver) {
-            println()
-            iterationForTeam(teamFirst, teamSecond)
-            if (getBattleState() != BattleState.Progress) {
-                getBattleState()
-                battleIsOver = true
-                break
-            }
-            println()
-            iterationForTeam(teamSecond, teamFirst)
-        }
     }
 }

@@ -1,8 +1,7 @@
-package main.kotlin
-
 interface Warrior {
-    var isKilled: Boolean
+    val isKilled: Boolean
     val miss: Int
 
+    fun attack(enemy: Warrior)
     fun getDamage(damage: Int)
 }

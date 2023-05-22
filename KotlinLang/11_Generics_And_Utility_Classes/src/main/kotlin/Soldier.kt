@@ -1,20 +1,8 @@
-package main.kotlin
-
-import kotlin.random.Random
-import kotlin.random.nextInt
-
-class Soldier: AbstractWarrior() {
-    override val maxHealth: Int = 20
-    override var health: Int = maxHealth
-    override val weapon: AbstractWeapon = when (Random.nextInt(0..3)) {
-        0 -> Weapons.createUzi
-        1 -> Weapons.createPistol
-        2 -> Weapons.createMachineGun
-        else -> Weapons.createRifle
-    }
-    override val accuracy: Int = 40
-    override val miss: Int = 20
-    override fun toString(): String {
-        return "Soldier"
-    }
+class Soldier(override val maxHealth: Int = 100,
+              override val accuracy: Int = 50,
+              override val weapon: AbstractWeapon = Weapons.createMachineGun(),
+              override var currentHealth: Int = maxHealth,
+              override val miss: Int = 20): AbstractWarrior() {
+    override val isKilled: Boolean
+        get() = currentHealth <= 0.0
 }

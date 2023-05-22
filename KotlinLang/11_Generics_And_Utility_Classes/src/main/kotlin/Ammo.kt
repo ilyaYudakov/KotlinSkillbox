@@ -1,16 +1,12 @@
-package main.kotlin
-
-import chance
-
-enum class Ammo(private var damage: Int,
-    private val criticalDamageChance: Int,
-    private val criticalDamageCoefficient: Int) {
+enum class Ammo(private val damage: Int,
+                private val criticalDamageChance: Int,
+                private val criticalDamageCoefficient: Int) {
     PISTOL_CARTRIDGE(2, 30, 5),
     MACHINE_GUN_CARTRIDGE(2, 20, 4),
     RIFLE_CARTRIDGE(3, 10, 4);
-    fun realDamage(): Int{
+    fun getDamage(): Int{
         val criticalDamage = damage * criticalDamageCoefficient
-        return if (criticalDamageChance.chance()) criticalDamage
+        return if (criticalDamageChance.isChance()) criticalDamage
         else damage
     }
 }
