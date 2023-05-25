@@ -13,4 +13,6 @@ abstract class AbstractWarrior : Warrior {
     override fun getDamage(damage: Int) {
         currentHealth -= damage
     }
+    override val isKilled: Boolean
+        get() = currentHealth <= 0.0
 }

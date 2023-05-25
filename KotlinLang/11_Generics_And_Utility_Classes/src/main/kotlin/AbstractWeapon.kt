@@ -14,11 +14,8 @@ abstract class AbstractWeapon(
 
     fun getCartridge(): List<Ammo> {
         val cartridges = mutableListOf<Ammo>()
-        if (fireType is FireType.BurstFire) {
-            for (i in 1.. fireType.size) {
-                magazine.pop()?.let { cartridges.add(it) }
-            }
-        } else {
+        val count = if (fireType is FireType.BurstFire) { fireType.size } else { 1 }
+        for (i in 1..count) {
             magazine.pop()?.let { cartridges.add(it) }
         }
         return cartridges.toList()

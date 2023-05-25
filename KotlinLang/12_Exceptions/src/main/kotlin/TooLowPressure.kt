@@ -1,0 +1,1 @@
+class TooLowPressure : Throwable(message = "Pressure below acceptable")
